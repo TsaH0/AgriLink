@@ -24,3 +24,4 @@ flowchart TD
     B -->|🤖 AI Explanation| D[Gemini 2.5 Flash]
     B -->|📂 Data Storage| E[(SQLite / PostgreSQL)]
 
+
