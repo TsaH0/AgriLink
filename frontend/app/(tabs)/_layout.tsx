@@ -1,33 +1,64 @@
 import { Tabs } from "expo-router";
-import React from "react";
+import { Ionicons } from "@expo/vector-icons";
 
-import { HapticTab } from "@/components/haptic-tab";
-import { IconSymbol } from "@/components/ui/icon-symbol";
-import { Colors } from "@/constants/theme";
-import { useColorScheme } from "@/hooks/use-color-scheme";
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#ff1d58", // Yass Queen - active color
-        tabBarInactiveTintColor: "#ffffff", // White - inactive color
         headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarActiveTintColor: "#69B578", // active green
         tabBarStyle: {
-          backgroundColor: "#181D27", // Dark background
-          borderTopColor: "#181D27", // Same as background to hide border
+          backgroundColor: "#181D27", // dark theme
+          borderTopWidth: 0,
         },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Disease Detection",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
+            <Ionicons name="leaf-outline" size={20} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="AddResidue"
+        options={{
+          title: "Add Residuals",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="add-circle-outline" size={20} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="ListResidue"
+        options={{
+          title: "View Listings",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="list-outline" size={20} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Crops"
+        options={{
+          title: "Crops",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="leaf" size={20} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Chats"
+        options={{
+          title: "Chats",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="chatbubbles-outline" size={20} color={color} />
           ),
         }}
       />
